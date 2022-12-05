@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "async-lalafo"
+version = "0.1.0"
+description = ""
+authors = ["Suvan <overmind77s@gmail.com>"]
+readme = "README.md"
+packages = [{include = "async_lalafo"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiohttp = "^3.8.3"
+bs4 = "^0.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
