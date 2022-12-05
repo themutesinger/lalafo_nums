@@ -16,7 +16,10 @@ async def get_phone(page):
 
 async def get_page(url, headers, session):
 
-    async with session.get(url, allow_redirects=True, headers=headers) as response:
+    async with session.get(
+        url, allow_redirects=True,
+        headers=headers
+    ) as response:
         return await response.text()
 
 
@@ -24,7 +27,7 @@ async def save_phone(url, headers, file_name, session):
     page = await get_page(url, headers, session)
     try:
         phone = await get_phone(page)
-    except:
+    except Exception:
         phone = 'xxxxx'
     with open(file_name+'.csv', 'a') as csvfile:
         csvwriter = csv.writer(csvfile)

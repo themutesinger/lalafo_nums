@@ -3,7 +3,7 @@ import aiohttp
 import csv
 from bs4 import BeautifulSoup
 
-from config import *
+from config import PAGE_COUNT
 
 # async def get_status(url, session):
 #     async with session.get(url, allow_redirects=True) as response:
@@ -17,7 +17,10 @@ async def get_hrefs(page):
 
 
 async def get_page(url, headers, session):
-    async with session.get(url, allow_redirects=True, headers=headers) as response:
+    async with session.get(
+        url, allow_redirects=True,
+        headers=headers
+    ) as response:
         return await response.text()
 
 
